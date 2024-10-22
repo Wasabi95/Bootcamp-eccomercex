@@ -4,9 +4,6 @@
 //ProductForm.jsx
 // ProductForm.jsx
 import PropTypes from 'prop-types';
-import nikeImage from './images/nike.jpg';
-import smartphoneImage from './images/smartphone.jpg';
-import tvImage from './images/tv.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ProductForm.css'; 
 
@@ -18,7 +15,7 @@ const ProductForm = ({ onSubmit }) => {
       name: 'Zapatos',
       price: 59.99,
       quantity: 1,
-      image: nikeImage,
+      image: '/images/nike.jpg',  
       description: 'Comodos para toda ocasion.',
     },
     {
@@ -26,7 +23,7 @@ const ProductForm = ({ onSubmit }) => {
       name: 'Smartphone',
       price: 699.99,
       quantity: 1,
-      image: smartphoneImage,
+      image: '/images/smartphone.jpg',  
       description: 'El celular mas avanzado.',
     },
     {
@@ -34,10 +31,11 @@ const ProductForm = ({ onSubmit }) => {
       name: 'TV',
       price: 499.99,
       quantity: 1,
-      image: tvImage,
-      description: '55 pulagadas la mejor imagen.',
+      image: '/images/tv.jpg',  
+      description: '55 pulgadas la mejor imagen.',
     },
   ];
+  
 
 
 const handleAddPredefinedProduct = (product) => {

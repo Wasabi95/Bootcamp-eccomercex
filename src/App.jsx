@@ -1,12 +1,10 @@
-import { useState, } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import ProductForm from './ProductForm';
-import Cart from './Cart';
-import Invoice from './Invoice'; 
+// App.jsx
+import { useState } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Views from './views'; // Import the new views file
 
 const App = () => {
   const [cart, setCart] = useState(() => {
-   
     const storedCart = localStorage.getItem('cart');
     return storedCart ? JSON.parse(storedCart) : [];
   });
@@ -37,11 +35,7 @@ const App = () => {
         </ul>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<ProductForm onSubmit={handleAddToCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path="/invoice" element={<Invoice cart={cart} />} /> 
-      </Routes>
+      <Views cart={cart} setCart={setCart} handleAddToCart={handleAddToCart} /> {/* Use the Views component */}
     </Router>
   );
 };
